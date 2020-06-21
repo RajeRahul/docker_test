@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'docker_exp_4.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'recommdation_system_db',
+        'NAME': 'recommendation_system_db',
         'PORT': 27017,
         'HOST': 'mongo'
     }
