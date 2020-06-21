@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    restart: always
+    container_name: 'web4'
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    links:
+      - mongo
+
+  mongo:
+    image: mongo
+    restart: always
+    container_name: 'mongodb4'
+    command: mongod
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
